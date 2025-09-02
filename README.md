@@ -44,14 +44,19 @@ Difference = double(InImage)-m; % Centered test image
 ProjectedTestImage = Eigenfaces'*Difference; % Test image feature vector
 
 %%%%% Calculating Euclidean distances 
+
 %d = sum(abs(bsxfun(@minus,p,w)),2);
+
 Euc_dist = [];
 for i = 1 : Train_Number
     q = ProjectedImages(:,i);
  
     temp = sum(abs(bsxfun(@minus,ProjectedTestImage,q))) ;
+    
     Euc_dist = [Euc_dist temp];
 end
+
 [Euc_dist_min , Recognized_index] = min(Euc_dist);
+
 OutputName = strcat(int2str(Recognized_index),'.pgm');
 end
