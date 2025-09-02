@@ -8,24 +8,39 @@ A MATLAB snippet demonstrating PCA feature extraction
 %
 % NOTE:
 % - This is only a part of the full PCA project (Eigenfaces)
+
 % - To run this code fully, you need:
+
 %   - Precomputed Eigenfaces
+
 %   - Centered training images (ProjectedImages)
+
 %   - The variable 'm' (mean image)
+
 %   - The variable 'Train_Number'
 
 %%%%%% Extracting the PCA features from test image
+
 image = imread(TestImage);
+
 image = im2gray(image);
+
 image = imresize(image, [64 80]);
+
 im1h=histeq(image);
+
 imd=double(im1h);
+
 im1hn = imd-mean(imd(:));
+
 InputImage = im1hn/std(im1hn(:));
 
 %InImage = reshape(temp',irow*icol,1);
+
 InImage=reshape(InputImage',64*80, 1);
+
 Difference = double(InImage)-m; % Centered test image
+
 ProjectedTestImage = Eigenfaces'*Difference; % Test image feature vector
 
 %%%%% Calculating Euclidean distances 
