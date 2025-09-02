@@ -1,6 +1,5 @@
 # pca_example
 A MATLAB snippet demonstrating PCA feature extraction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PCA Feature Extraction Snippet
 %
 % This MATLAB code snippet demonstrates:
@@ -14,8 +13,7 @@ A MATLAB snippet demonstrating PCA feature extraction
 %   - Centered training images (ProjectedImages)
 %   - The variable 'm' (mean image)
 %   - The variable 'Train_Number'
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%% Extracting the PCA features from test image
+%%%%%% Extracting the PCA features from test image
 image = imread(TestImage);
 image = im2gray(image);
 image = imresize(image, [64 80]);
@@ -29,7 +27,7 @@ InImage=reshape(InputImage',64*80, 1);
 Difference = double(InImage)-m; % Centered test image
 ProjectedTestImage = Eigenfaces'*Difference; % Test image feature vector
 
-%%%%%%%%%%%%%%%%%%%%%%%% Calculating Euclidean distances 
+%%%%% Calculating Euclidean distances 
 %d = sum(abs(bsxfun(@minus,p,w)),2);
 Euc_dist = [];
 for i = 1 : Train_Number
