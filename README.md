@@ -1,11 +1,12 @@
 # pca_example
-A MATLAB snippet demonstrating PCA feature extraction
-% PCA Feature Extraction Snippet
-%
+
 % This MATLAB code snippet demonstrates:
+
 % - PCA feature extraction from a test image
+
 % - Calculation of Euclidean distances to projected training images
-%
+
+
 % NOTE:
 % - This is only a part of the full PCA project (Eigenfaces)
 
@@ -59,4 +60,5 @@ end
 [Euc_dist_min , Recognized_index] = min(Euc_dist);
 
 OutputName = strcat(int2str(Recognized_index),'.pgm');
+
 end
