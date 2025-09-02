@@ -13,6 +13,7 @@ A MATLAB snippet demonstrating PCA feature extraction
 %   - Centered training images (ProjectedImages)
 %   - The variable 'm' (mean image)
 %   - The variable 'Train_Number'
+
 %%%%%% Extracting the PCA features from test image
 image = imread(TestImage);
 image = im2gray(image);
